@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css"  href="style.css"/>
+    </head>
+    <body>
+        <div class="end">Copyright&copy;NAMITASATHISH AllRightsReserved</div>
+        <div class="container">
+            <div class="title">MULTIPLICATION TABLE GENERATOR</div>
+            <div class="title1">Get the table of any number by simply typing the number </div>
+            <br/>
+            <br/>
+            <div > <input class="number" type="number" min="0" placeholder="Enter the number whose table you want.... "/> </div>
+            <br/>
+           
+            <div > <input class="range" type="number" min="0" placeholder="Range that you want to be generated.... "/> </div>
+            <br/>
+            <div style="text-align: center;">Enter range less than 100 as larger values can crash your browser</div>
+            <br/>
+            <br/>
+            <div class="button-container"><button class="button" onclick="eval();">GET TABLE</button></div>
+        </div>
+        <br/>
+        <p class="res-container"></p>
+        
+    </body>
+    <script type="text/javascript">
+    function eval(){
+       var num=parseFloat(document.getElementsByClassName("number")[0].value);
+       var range=parseFloat(document.getElementsByClassName("range")[0].value);
+       var resContainer = document.getElementsByClassName("res-container")[0];
+
+       resContainer.innerHTML = '';
+       
+     if (isNaN(num)) {
+            alert("Enter a valid number");
+                    return;
+                }
+
+                if (isNaN(range)) {
+                    alert("Enter a valid range");
+                    return;
+                }
+
+                if (num !== null && range !== null) {
+                    for (var i = 0; i <= range; i++) {
+                        var p = document.createElement('p');
+                        p.innerText = num + " x " + i + " = " + (num * i);
+                        resContainer.appendChild(p);
+                    }
+                    resContainer.style.backgroundColor = '#f9dc5c';
+                   
+                } 
+            }
+            
+       
+    </script>
+</html>
